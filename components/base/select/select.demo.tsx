@@ -163,6 +163,23 @@ export const SizesDemo = () => {
                     </Select.Item>
                 )}
             </Select>
+
+            {/* Large */}
+            <Select
+                isRequired
+                size="lg"
+                label="Team member"
+                tooltip="This is a tooltip"
+                hint="This is a hint text to help user."
+                placeholder="Select team member"
+                items={items}
+            >
+                {(item) => (
+                    <Select.Item id={item.id} supportingText={item.supportingText} isDisabled={item.isDisabled} icon={item.icon} avatarUrl={item.avatarUrl}>
+                        {item.label}
+                    </Select.Item>
+                )}
+            </Select>
         </div>
     );
 };
@@ -424,6 +441,7 @@ export const TagsDemo = () => {
     return (
         <TagSelect
             isRequired
+            size="md"
             selectedItems={selectedItems}
             label="Search"
             tooltip="This is a tooltip"
