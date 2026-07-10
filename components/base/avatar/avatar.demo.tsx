@@ -47,6 +47,10 @@ export const VerifiedDemo = () => {
     return <Avatar verified size="md" src="https://www.untitledui.com/images/avatars/olivia-rhye?fm=webp&q=80" alt="Olivia Rhye" />;
 };
 
+export const BorderDemo = () => {
+    return <Avatar border size="md" src="https://www.untitledui.com/images/avatars/olivia-rhye?fm=webp&q=80" alt="Olivia Rhye" />;
+};
+
 export const PlaceholderDemo = () => {
     return <Avatar size="md" alt="Olivia Rhye" placeholderIcon={User01} />;
 };

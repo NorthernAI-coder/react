@@ -1280,9 +1280,79 @@ export const MultiSelectLgDemo = () => {
     );
 };
 
+export const MultiSelectSizesDemo = () => {
+    const [smKeys, setSmKeys] = useState<Selection>(new Set(["design", "product"]));
+    const [mdKeys, setMdKeys] = useState<Selection>(new Set(["design", "product"]));
+    const [lgKeys, setLgKeys] = useState<Selection>(new Set(["design", "product"]));
+
+    const renderItem = (item: SelectItemType) => (
+        <MultiSelect.Item id={item.id} supportingText={item.supportingText} selectionIndicator="checkbox" selectionIndicatorAlign="left">
+            {item.label}
+        </MultiSelect.Item>
+    );
+
+    return (
+        <div className="flex flex-col gap-8">
+            {/* Small */}
+            <MultiSelect
+                isRequired
+                size="sm"
+                label="Teams"
+                tooltip="This is a tooltip"
+                hint="This is a hint text to help user."
+                placeholder="Select teams"
+                items={teamItems}
+                selectedKeys={smKeys}
+                onSelectionChange={setSmKeys}
+                supportingText={`${getSelectedUserCount(smKeys)} users`}
+                onReset={() => setSmKeys(new Set())}
+                onSelectAll={() => setSmKeys(new Set(teamItems.map((t) => t.id)))}
+            >
+                {renderItem}
+            </MultiSelect>
+
+            {/* Medium */}
+            <MultiSelect
+                isRequired
+                size="md"
+                label="Teams"
+                tooltip="This is a tooltip"
+                hint="This is a hint text to help user."
+                placeholder="Select teams"
+                items={teamItems}
+                selectedKeys={mdKeys}
+                onSelectionChange={setMdKeys}
+                supportingText={`${getSelectedUserCount(mdKeys)} users`}
+                onReset={() => setMdKeys(new Set())}
+                onSelectAll={() => setMdKeys(new Set(teamItems.map((t) => t.id)))}
+            >
+                {renderItem}
+            </MultiSelect>
+
+            {/* Large */}
+            <MultiSelect
+                isRequired
+                size="lg"
+                label="Teams"
+                tooltip="This is a tooltip"
+                hint="This is a hint text to help user."
+                placeholder="Select teams"
+                items={teamItems}
+                selectedKeys={lgKeys}
+                onSelectionChange={setLgKeys}
+                supportingText={`${getSelectedUserCount(lgKeys)} users`}
+                onReset={() => setLgKeys(new Set())}
+                onSelectAll={() => setLgKeys(new Set(teamItems.map((t) => t.id)))}
+            >
+                {renderItem}
+            </MultiSelect>
+        </div>
+    );
+};
+
 export const MultiSelectDisabledDemo = () => (
     <MultiSelect
-        size="sm"
+        size="md"
         label="Teams"
         tooltip="This is a tooltip"
         hint="This is a hint text to help user."
