@@ -36,12 +36,19 @@ export const SizesDemo = () => {
     return (
         <div className="flex flex-col gap-8">
             {/* Small */}
-            <Input isRequired label="Email" hint="This is a hint text to help user." placeholder="olivia@untitledui.com" tooltip="This is a tooltip" />
+            <Input
+                isRequired
+                size="sm"
+                label="Email"
+                hint="This is a hint text to help user."
+                placeholder="olivia@untitledui.com"
+                tooltip="This is a tooltip"
+            />
 
             {/* Medium */}
             <Input
                 isRequired
-                size="lg"
+                size="md"
                 label="Email"
                 hint="This is a hint text to help user."
                 placeholder="olivia@untitledui.com"

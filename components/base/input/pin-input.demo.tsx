@@ -115,6 +115,48 @@ export const InputOTPLG = () => {
     );
 };
 
+export const InputOTPSizesDemo = () => {
+    return (
+        <div className="flex flex-col gap-8">
+            {/* Small */}
+            <PinInput size="xxxs">
+                <PinInput.Label isRequired>Verification code</PinInput.Label>
+                <PinInput.Group maxLength={4} pattern={REGEXP_ONLY_DIGITS}>
+                    <PinInput.Slot index={0} />
+                    <PinInput.Slot index={1} />
+                    <PinInput.Slot index={2} />
+                    <PinInput.Slot index={3} />
+                </PinInput.Group>
+                <PinInput.Description>This is a hint text to help user.</PinInput.Description>
+            </PinInput>
+
+            {/* Medium */}
+            <PinInput size="xxs">
+                <PinInput.Label isRequired>Verification code</PinInput.Label>
+                <PinInput.Group maxLength={4} pattern={REGEXP_ONLY_DIGITS}>
+                    <PinInput.Slot index={0} />
+                    <PinInput.Slot index={1} />
+                    <PinInput.Slot index={2} />
+                    <PinInput.Slot index={3} />
+                </PinInput.Group>
+                <PinInput.Description>This is a hint text to help user.</PinInput.Description>
+            </PinInput>
+
+            {/* Large */}
+            <PinInput size="xs">
+                <PinInput.Label isRequired>Verification code</PinInput.Label>
+                <PinInput.Group maxLength={4} pattern={REGEXP_ONLY_DIGITS}>
+                    <PinInput.Slot index={0} />
+                    <PinInput.Slot index={1} />
+                    <PinInput.Slot index={2} />
+                    <PinInput.Slot index={3} />
+                </PinInput.Group>
+                <PinInput.Description>This is a hint text to help user.</PinInput.Description>
+            </PinInput>
+        </div>
+    );
+};
+
 export const VerificationCodeInputSM = () => {
     return (
         <PinInput size="sm">
